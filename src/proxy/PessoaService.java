@@ -4,18 +4,18 @@ import builder.Pessoa;
 
 public class PessoaService {
 
-	private PessoaRepository pessoaRepository;
+	private ProxyPessoa proxyPessoa;
 	
-	public PessoaService (PessoaRepository pessoaRepository) {
-		this.pessoaRepository = pessoaRepository;
+	public PessoaService (ProxyPessoa proxyPessoa) {
+		this.proxyPessoa = proxyPessoa;
 	}
 	
 	public void save(Pessoa pessoa) {
-		pessoaRepository.save(pessoa);
+		proxyPessoa.save(pessoa);
 	}
 	
 	public Pessoa findById(Long id) {
-		return pessoaRepository.findById(id);
+		return proxyPessoa.findById(id);
 	}
 	
 	
